@@ -39,7 +39,11 @@ public class DatabaseLoader implements ApplicationRunner {
                 new Author("efisher", "Eric",  "Fisher", "password"),
                 new Author("csouza", "Carlos",  "Souza", "password")
         ));
+<<<<<<< HEAD
 
+=======
+        authorRepository.saveAll(authors);
+>>>>>>> parent of 58050f9 (Fixes for Module 2)
         IntStream.range(0,40).forEach(i->{
             String template = templates[i % templates.length];
             String gadget = gadgets[i % gadgets.length];
