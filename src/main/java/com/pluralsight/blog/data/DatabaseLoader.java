@@ -40,10 +40,11 @@ public class DatabaseLoader implements ApplicationRunner {
                 new Author("csouza", "Carlos",  "Souza", "password")
         ));
         authorRepository.saveAll(authors);
+
         IntStream.range(0,40).forEach(i->{
             String template = templates[i % templates.length];
             String gadget = gadgets[i % gadgets.length];
-            Author author = authors.get(1);
+            Author author = authors.get(i % authors.size());
 
             String title = String.format(template, gadget);
             Post post = new Post(title, "Lorem ipsum dolor sit amet, consectetur adipiscing elit… ", author);
@@ -52,6 +53,6 @@ public class DatabaseLoader implements ApplicationRunner {
         });
 
         postRepository.saveAll(randomPosts);
-        authorRepository.saveAll(authors);
+
     }
 }
