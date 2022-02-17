@@ -245,8 +245,8 @@ public class Module2_Tests {
             Author author = authorsSaved.get(i % authorsSaved.size());
 
             String title = String.format(template, gadget);
-            Post post = new Post(title, "Lorem ipsum dolor sit amet, consectetur adipiscing elit… ", author);
-            // post.setAuthor(author);
+            Post post = new Post(title, "Lorem ipsum dolor sit amet, consectetur adipiscing elit… ");
+            post.setAuthor(author);
             try {
                 Method method = Post.class.getMethod("setAuthor", Author.class);
                 method.invoke(post, author);
